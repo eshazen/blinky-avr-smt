@@ -1,0 +1,17 @@
+(footprint "2PIN_battery_new2" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (fp_text reference "BT1" (at -4.064 0 90) (layer "F.SilkS") hide
+      (effects (font (size 1.524 1.524) (thickness 0.3048)))
+    (tstamp d8a4e810-d750-4e8a-89da-1c35a78973ab)
+  )
+  (fp_text value "2xAA" (at 8.255 3.81 90) (layer "F.SilkS") hide
+      (effects (font (size 1.524 1.524) (thickness 0.3048)))
+    (tstamp 8a506470-283c-4b50-abcc-cc5cc4f47693)
+  )
+  (pad "1" thru_hole circle (at -1.27 0) (size 1.524 1.524) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp cfd8a30a-32e1-4172-b39f-1cfd52992c15))
+  (pad "2" thru_hole circle (at 1.27 0) (size 1.524 1.524) (drill 0.8128) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp c4b7bfe2-371c-46f6-babb-5a02735d9ca9))
+  (pad "5" thru_hole circle (at -1.27 3.048) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp 8b5421e2-2fde-4fc0-b73b-02cd4d7bab25))
+  (pad "6" thru_hole circle (at 1.27 3.048) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp f19ce66d-8719-40a2-aee0-a371607f60e5))
+  (pad "7" thru_hole circle (at -1.27 6.096) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp bcb65f4c-2645-4e40-88f3-3782e5b1c127))
+  (pad "8" thru_hole circle (at 1.27 6.096) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp 90590b4d-7091-41af-a50f-74e7a649eb60))
+)
