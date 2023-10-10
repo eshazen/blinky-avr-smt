@@ -1,6 +1,7 @@
 # blinky-avr-smt
 
 ![Overview Photo](Photos/overview.jpg)
+![Blinky](http://edf.bu.edu/pov/taxi.jpg)
 
 ## Blinky POV soldering project
 
