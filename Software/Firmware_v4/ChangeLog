@@ -1,0 +1,9 @@
+2023-10-10  Eric Hazen  <hazen@botlab-roblyer-hazen>
+
+	* Revive for SMD hardware
+
+2014-12-06  Eric Hazen  <hazen@watt>
+
+	* README.txt: Revived for 2014.  Minor code tweaks for gcc4.8
+	
+
