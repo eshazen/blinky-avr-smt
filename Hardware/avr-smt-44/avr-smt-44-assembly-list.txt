@@ -1,0 +1,12 @@
+ #   Reference                       Qty Value        CatNo                             
+ 1   BT1                              1  Battery      1568-1408-ND                      
+ 2   C1                               1  0.1uF        399-C1206C104K3RAC7800CT-ND       
+ 3   D1, D2, D3, D4, D5, D6, D7, D8   8  LED          3147-T1341USD-30C000112U1930CT-ND 
+ 4   D9, D10                          2  D_Photo      751-1057-ND                       
+ 5   D11                              1  LED Green    160-1169-1-ND                     
+ 6   J1                               1  AVR-ISP-6    10129383-906002BLF-ND             
+ 7   R1, R2, R4                       3  10k          311-10KERCT-ND                    
+ 8   R3                               1  750          311-750ERCT-ND                    
+ 9   R5, R6, R7, R8, R9, R10, R11,    8  330          311-330ERCT-ND                    
+10   SW1                              1  SW_Push      SW400-ND                          
+11   U1                               1  ATtiny84A-SS ATTINY84A-SSURCT-ND               

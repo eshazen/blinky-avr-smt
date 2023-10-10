@@ -2,7 +2,7 @@
 
   (uuid 0d15d7ba-ddd8-462a-b062-db49acd454bb)
 
-  (paper "A")
+  (paper "USLetter")
 
   (lib_symbols
     (symbol "Connector:AVR-ISP-6" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
