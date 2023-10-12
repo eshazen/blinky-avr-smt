@@ -9,6 +9,13 @@ sensors at a Javascript applet which converts the text message to a
 simplified Intel Hex format and transmits it as a binary code.  Two
 squares on the monitor represent "clock" (strobe) and "data".
 
+## Bugs
+
+Messages longer than 15 characters currently aren't handled correctl
+and corrupt the EEPROM.
+
+## Details
+
 Each clock pulse causes two data bits to be sampled, the first on the
 rising edge and the second on the falling edge.  The most-significant
 bit of data is sent first, with 4 clock pulses per byte.
