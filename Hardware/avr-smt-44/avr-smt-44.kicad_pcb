@@ -40547,7 +40547,7 @@
       )
     )
   )
-  (gr_text "Suggested installation order:\n\nU1\nR1-R12\nD1-D8    (double check orientation!)\nSW1, D9, D10\n" (at 22.1 128.7) (layer "User.3") (tstamp 5dcb5cc2-71f1-4b4d-95bf-cdfcf3c4ac10)
+  (gr_text "Suggested installation order:\n\nU1\nR1-R12\nD1-D8    (double check orientation!)\nSW1, D9, D10\nJ1\nBattery (note wire colors!)\n" (at 22.1 128.7) (layer "User.3") (tstamp 5dcb5cc2-71f1-4b4d-95bf-cdfcf3c4ac10)
     (effects (font (size 1.524 1.524) (thickness 0.1524)) (justify left bottom))
   )
   (gr_text "ASSEMBLY" (at 86.6 142.8) (layer "User.3") (tstamp a4e1e228-5662-4dcd-aa7e-e8e791223093)
