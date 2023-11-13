@@ -8,13 +8,20 @@
  *
  * TODO:
  * Implement pixel-based messages, multiple messages
+ *
+ * EEPROM memory format
+ *   each character is 5 bytes wide
+ *
+ * byte 0     - data size
+ * byte 1 [0] -
+ * byte 2 [1] - bits 2-5 speed code
+ * byte 3 [2] - message length
+ * byte 4 [3] - start of message.  5 bytes per character
  */
-
-#define REV2
 
 #define USE_EEPROM
 
-// #define USE_UART
+#define USE_UART
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -27,10 +34,12 @@
 #define LED_PORTA 0
 #define LED_PORTB 1
 
+// default message "EPIC!"
+static uint8_t default_msg[] = { 0x08, 0x01, 0x1c, 0x05, 0x0e, 0x19, 0x12, 0x0c, 0x25 };
+
 // LED pin assignments
 const uint8_t led_port_code[] PROGMEM = {
-#ifdef REV2
-  // these are valid for Rev4 layout for 2014
+  // these are valid for Rev4 layout for 2014 (and 2023 SMT version)
   LED_PORTA, 0,
   LED_PORTA, 1,
   LED_PORTA, 2,
@@ -39,16 +48,6 @@ const uint8_t led_port_code[] PROGMEM = {
   LED_PORTB, 0,
   LED_PORTB, 1,
   LED_PORTB, 2
-#else
-  LED_PORTA, 0,
-  LED_PORTA, 1,
-  LED_PORTA, 2,
-  LED_PORTA, 3,
-  LED_PORTA, 4,
-  LED_PORTA, 5,
-  LED_PORTB, 3,
-  LED_PORTB, 2
-#endif
 };
 
 #define led_bit(n) (pgm_read_byte(&(led_port_code[((n)<<1)+1])))
@@ -117,41 +116,32 @@ static void led_set( uint8_t set_mask)
   led_on( set_mask);
 }
 
+void error_blink( uint8_t e) {
+  int i;
+  for( i=0; i<5; i++) {
+    led_set( e);
+    _delay_ms(100);
+    led_set( 0);
+    _delay_ms(100);
+  }
+}
 
 
 
 #ifdef USE_UART
-#ifdef REV2
 #define UART_PORT PORTA
 #define UART_DDR DDRA
 #define UART_TX_BIT _BV(5)
-#else
-#define UART_PORT PORTB
-#define UART_DDR DDRB
-#define UART_TX_BIT _BV(1)
-#endif
 #endif
 
-#ifdef REV2
-// ok for Rev4 layout
 #define SW_PORT PORTA
 #define SW_PIN PINA
 #define SW_BIT 5
-#else
-#define SW_PORT PORTB
-#define SW_PIN PINB
-#define SW_BIT 0
-#endif
 #define SW_MASK _BV(SW_BIT)
 
-#ifdef REV2
 // ok for Rev4 layout
 #define ADC_DATA 4
 #define ADC_CLK 6
-#else
-#define ADC_DATA 6
-#define ADC_CLK 7
-#endif
 
 #define CLK_VAL 1
 #define DATA_VAL 2
@@ -414,6 +404,21 @@ void delay_column( uint8_t d)
     _delay_ms( 500);
 }
 
+// read EEPROM message to eep_nd, eebuf
+//   return:   0 - no/invalid message
+//            >0 - length of mesage
+int read_eeprom() {
+  int i;
+  eep_nd = eeprom_read_byte( (void *)0);
+
+  if( eep_nd < 4 || eep_nd > EEBUFSIZ)
+    return 0;
+  
+  eeprom_read_block( eebuf, (void *)1, eep_nd);
+
+  return eep_nd;
+}
+
 // display messages if any in EEPROM
 // returns:
 // 0 - no messages to display
@@ -422,34 +427,15 @@ void delay_column( uint8_t d)
 int show_messages() {
   uint8_t i, t, n, j, speed, c;
 
-  eep_nd = eeprom_read_byte( 0); /* get EEPROM data size */
+  n = read_eeprom();
+  if( !n) return 0;
 
   // display EEPROM buffer size on low LEDs, high one on
-  led_set( (eep_nd&0x7f) | 0x80);
+  led_set( (n&0x7f) | 0x80);
   _delay_ms( 500);
   // turn off all LEDs
   led_off( 0xff);
   _delay_ms( 500);
-
-  if( eep_nd < 4 || eep_nd > EEBUFSIZ)
-    return 0;
-
-  // goto blinky mode until button pressed
-  // copy data from the EEPROM
-  eeprom_read_block( eebuf, (void *)1, eep_nd);
-
-#ifdef USE_UART
-  // dump eeprom buffer
-  uart_putc('=');
-  uart_hex2( eep_nd);
-  crlf();
-  for( i=0; i<eep_nd; i++) {
-    uart_hex2( eebuf[i]);
-    crlf();
-  }
-  uart_putc( '*');
-  crlf();
-#endif
 
   n = eebuf[2];		/* length of first message */
   speed = (eebuf[1] >> 2) & 15; /* speed code 0-15, 7=default */
@@ -463,28 +449,29 @@ int show_messages() {
 
     // loop over message
     for( i=0; i<n; i++) {
-#ifdef USE_UART
-      uart_putc( 'd');
-      uart_hex2( i);
-      uart_putc( '=');
-#endif
+
+// #ifdef USE_UART
+//       uart_putc( 'd');
+//       uart_hex2( i);
+//       uart_putc( '=');
+// #endif
       // look up character
       t = eebuf[3+i] * FONT_WIDTH;
       if( t < sizeof(font_table)) {
 	for( j=0; j<FONT_WIDTH; j++) {
 	  c = pgm_read_byte(&(font_table[t+j]));
 	  led_set( c);
-#ifdef USE_UART
-	  uart_hex2( c);
-	  uart_putc( ' ');
-#endif
+// #ifdef USE_UART
+// 	  uart_hex2( c);
+// 	  uart_putc( ' ');
+// #endif
 	  delay_column( speed);
 	}
       } else {		// invalid code probably a space
 	// delay for three extra columns for space
-#ifdef USE_UART
-	uart_putc('S');
-#endif
+//#ifdef USE_UART
+//	uart_putc('S');
+//#endif
 	delay_column( speed);
 	delay_column( speed);
 	delay_column( speed);
@@ -492,14 +479,33 @@ int show_messages() {
       led_off( 0xff);
       delay_column( speed); /* two blank columns between characters */
       delay_column( speed);
-#ifdef USE_UART
-      crlf();
-#endif
+// #ifdef USE_UART
+//       crlf();
+// #endif
     }
   }
 
   // fall out if button pressed
   return 1;
+}
+
+
+void dump_eeprom( uint8_t n) {
+#ifdef USE_UART
+  int i;
+  // read and print the first 16 bytes of the EEPROM
+  // use the eebuf temporarily
+  eeprom_read_block( eebuf, (void *)0, EEBUFSIZ);
+
+  uart_putc('E');
+  crlf();
+  for( i=0; i<16; i++) {
+    uart_hex2( eebuf[i]);
+    uart_putc( ' ');
+  }
+  uart_putc( '*');
+  crlf();
+#endif
 }
 
 
@@ -511,6 +517,21 @@ int main(void)
   uint8_t nblk;
 
   ioinit();
+
+  dump_eeprom( 16);
+
+  // check for button held down at power-up, and reset to default message
+  if( bit_is_clear( SW_PIN, SW_BIT)) {
+    // do reset stuff
+    error_blink(7);
+    eeprom_update_block( default_msg, (void *)0, sizeof(default_msg)); /* then the data */
+
+    // wait for button release plus some delay
+    loop_until_bit_is_set( SW_PIN, SW_BIT);
+    _delay_ms( 100);
+    dump_eeprom( 16);
+  }
+
   // test LEDs
   led_off( 0xff);
   _delay_ms( 100);
@@ -527,7 +548,11 @@ int main(void)
 
   // Power-up:   check for EEPROM message and display it indefinitely until
   // the button is pressed
+  error_blink(1);
+
   i = show_messages();
+
+  error_blink(2);
 
   do_reset = 1;
 
@@ -581,14 +606,7 @@ int main(void)
       if( do_reset)
 	break;
 
-      if( t < 0) {		/* error blink */
-	for( i=0; i<5; i++) {
-	  led_set( 0xf);
-	  _delay_ms(100);
-	  led_set( 0);
-	  _delay_ms(100);
-	}
-      }
+      error_blink(15);
 
       if( t == 0) {		/* end-of-file record */
 #ifdef USE_EEPROM

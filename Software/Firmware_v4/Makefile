@@ -10,8 +10,8 @@ CFLAGS = -std=c99 -g -Os -mmcu=$(MCU) -DF_CPU=$(F_OSC)
 
 LDFLAGS = -Wl,-Map=$(<:.o=.map),--cref -mmcu=$(MCU)
 
-DUDEPORT  = -c avrispv2 -P usb
-# DUDEPORT  = -c usbtiny -P usb
+# DUDEPORT  = -c avrispv2 -P usb
+DUDEPORT  = -c usbtiny -P usb
 DUDEMCU = t84
 AVRDUDE  = avrdude $(DUDEPORT) -p $(DUDEMCU) -y -u 
 
