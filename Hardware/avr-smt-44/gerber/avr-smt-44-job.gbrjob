@@ -3,15 +3,15 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "7.0.6-7.0.6~ubuntu22.04.1"
+      "Version": "7.0.8-7.0.8~ubuntu22.04.1"
     },
-    "CreationDate": "2023-09-16T17:19:44-04:00"
+    "CreationDate": "2023-11-16T08:05:37-05:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "avr-smt-44",
       "GUID": "6176722d-736d-4742-9d34-342e6b696361",
-      "Revision": "rev?"
+      "Revision": "1.0"
     },
     "Size": {
       "X": 25.5,
@@ -24,8 +24,8 @@
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.1778,
-      "PadToTrack": 0.1778,
+      "PadToPad": 0.0,
+      "PadToTrack": 0.0,
       "TrackToTrack": 0.1778,
       "MinLineWidth": 0.254,
       "TrackToRegion": 0.254,

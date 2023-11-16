@@ -1785,7 +1785,7 @@
   )
 
   (symbol (lib_id "Connector:TestPoint") (at 67.31 132.08 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6761ba6e-c73e-4a3f-a943-f7178f742348)
     (property "Reference" "TP2" (at 69.85 127.508 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -1930,7 +1930,7 @@
   )
 
   (symbol (lib_id "Connector:TestPoint") (at 50.8 132.08 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 751f40b8-5133-42c8-9b50-bbda73e58b99)
     (property "Reference" "TP1" (at 53.34 127.508 0)
       (effects (font (size 1.27 1.27)) (justify left))
@@ -2233,7 +2233,7 @@
   )
 
   (symbol (lib_id "Mechanical:Housing") (at 46.99 104.14 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cb511103-9406-4310-9d23-1a39b8799f13)
     (property "Reference" "N1" (at 50.8 103.1875 0)
       (effects (font (size 1.27 1.27)) (justify left))
