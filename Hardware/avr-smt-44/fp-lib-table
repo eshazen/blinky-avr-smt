@@ -3,4 +3,5 @@
   (lib (name "battery_wire")(type "KiCad")(uri "${KIPRJMOD}/battery_wire.pretty")(options "")(descr ""))
   (lib (name "push_sw")(type "KiCad")(uri "${KIPRJMOD}/push_sw.pretty")(options "")(descr ""))
   (lib (name "rhett_logo")(type "KiCad")(uri "${KIPRJMOD}/rhett_logo.pretty")(options "")(descr ""))
+  (lib (name "models")(type "KiCad")(uri "${KIPRJMOD}/models")(options "")(descr ""))
 )

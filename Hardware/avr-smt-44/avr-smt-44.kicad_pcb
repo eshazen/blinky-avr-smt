@@ -309,7 +309,7 @@
       (stroke (width 0.12) (type solid)) (layer "F.Fab") (tstamp 69e9d066-f62e-4fc5-a9fe-2719c86260ac))
     (pad "1" thru_hole circle (at 0 0) (size 3.6 3.6) (drill 2) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "1") (pintype "passive") (tstamp 328a06b6-1de4-49a8-96a4-ee16c4a7c992))
-    (model "${KICAD6_3DMODEL_DIR}/TestPoint.3dshapes/TestPoint_Loop_D3.80mm_Drill2.0mm.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/TestPoint.3dshapes/TestPoint_Loop_D3.80mm_Drill2.0mm.wrl" hide
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -328,11 +328,11 @@
     (property "ki_keywords" "AVR ISP Connector")
     (path "/e8ee6ba9-a4a5-4a3f-bea0-307618c6e47a")
     (attr through_hole)
-    (fp_text reference "J1" (at 1.27 -2.33 -90) (layer "F.SilkS")
+    (fp_text reference "J1" (at 1.27 -2.33 90) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 1d7584d9-9351-4394-afa1-7a96e2982c3d)
     )
-    (fp_text value "AVR-ISP-6" (at 1.27 7.41 -90) (layer "F.Fab")
+    (fp_text value "AVR-ISP-6" (at 1.27 7.41 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 7a26d9e1-dba9-4cd2-a49b-4a7984f30e35)
     )
@@ -386,7 +386,7 @@
       (net 14 "/nRESET") (pinfunction "~{RST}") (pintype "passive") (tstamp 2d329ad7-fa69-43cd-a2ed-b208253436d4))
     (pad "6" thru_hole oval (at 2.54 5.08 270) (size 1.7 1.7) (drill 1) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "GND") (pintype "passive") (tstamp d9427412-925c-4323-8ce0-7dc675e25a4b))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x03_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x03_P2.54mm_Vertical.wrl" hide
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -481,6 +481,11 @@
       (net 2 "GND") (pinfunction "2") (pintype "passive") (tstamp 4113bedd-5a7c-4e98-b72a-be5ea8f7643f))
     (pad "3" thru_hole circle (at 6.5024 4.4958) (size 1.397 1.397) (drill 1.0668) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp cfeb5e4e-f28b-41a0-9fd0-d3289fab03d6))
     (pad "4" thru_hole circle (at 6.5024 0) (size 1.397 1.397) (drill 1.0668) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp da10496c-79b9-4f0f-9c03-286aaf221a3d))
+    (model "${KIPRJMOD}/models/B3F-1000.step"
+      (offset (xyz 3 -2 0.5))
+      (scale (xyz 1 1 1))
+      (rotate (xyz -90 0 0))
+    )
   )
 
   (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" (layer "F.Cu")
@@ -634,7 +639,7 @@
       (stroke (width 0.12) (type solid)) (layer "F.Fab") (tstamp 636f39da-b880-41a1-9ab1-3721d4a8bf4b))
     (pad "1" thru_hole circle (at 0 0) (size 3.6 3.6) (drill 2) (layers "*.Cu" "*.Mask")
       (net 2 "GND") (pinfunction "1") (pintype "passive") (tstamp 7654efea-1f7c-48c7-b124-25b056e4a2dc))
-    (model "${KICAD6_3DMODEL_DIR}/TestPoint.3dshapes/TestPoint_Loop_D3.80mm_Drill2.0mm.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/TestPoint.3dshapes/TestPoint_Loop_D3.80mm_Drill2.0mm.wrl" hide
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -784,6 +789,11 @@
     (pad "6" thru_hole circle (at 1.27 3.048) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp 63e527a2-7aaf-4cda-8aa4-42397cd97cc0))
     (pad "7" thru_hole circle (at -1.27 6.096) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp 9019902b-3a82-41e6-8f67-f44b3e05a8e6))
     (pad "8" thru_hole circle (at 1.27 6.096) (size 2.286 2.286) (drill 1.905) (layers "*.Cu" "*.Mask" "F.SilkS") (tstamp e6706ea8-cbf1-4043-b60c-9a28da5a3cb1))
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+      (offset (xyz 1.25 0 0.05))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 90))
+    )
   )
 
   (footprint "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" (layer "F.Cu")
