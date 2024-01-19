@@ -11,8 +11,10 @@ squares on the monitor represent "clock" (strobe) and "data".
 
 ## Bugs
 
-Messages longer than 15 characters currently aren't handled correctl
-and corrupt the EEPROM.
+Messages longer than 15 characters currently aren't handled correctly
+and corrupt the EEPROM.  
+
+For now:  modify the programming code to not allow this
 
 ## Details
 

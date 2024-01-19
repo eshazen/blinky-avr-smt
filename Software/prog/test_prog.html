@@ -216,9 +216,9 @@ function set_color_data(c)
 <div id="msg_text" style="display: block;">
   Message:
   <input type="text" maxlength="15" size="15" style="font-weight: bold; font-size: 20px;"
-  id="msg_text_message" value="Hello World" />
+  id="msg_text_message" value="Hello World" /> (max 15 characters)
   <br />
-  Available characters: 0-9, A-Z, !, ?, &amp;, \',\', and \'.\'.
+  Available characters: 0-9, A-Z, !, ?, &amp;, comma, period.
 </div>
 
 <p>
@@ -250,12 +250,20 @@ function set_color_data(c)
 must point at the two squares marked "Clock" and "Data".
 <li>Press the white button on the board.  The top LED (D8) should
 come on and then go off.
-<li>Click the "Go" button above.  The squares will flash, and the top LED on your board
-should flash as the message is downloaded. 
+<li>Click the "Go" button above.  The squares will flash, and the LEDs on your board
+  should flash as the message is downloaded.  Hold the board still until the progress
+  bar reaches 100%.  Your newmessage should start flashing.
 </ul>
 <p>
-<a href="prog_large.png">
-<img src="prog_sm.png"></a>
+<img src="prog_sm.png">
+</div>
+
+<h2>Trouble?</h2>
+
+<div style="width: 620px;">
+In case programming doesn't work for some reason, you can reset your
+board by holding down the button while you turn on the power.
+This will reset it to the default message "EPIC!".
 </div>
 
 </body>
