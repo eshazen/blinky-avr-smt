@@ -17,6 +17,30 @@
  * byte 2 [1] - bits 2-5 speed code
  * byte 3 [2] - message length
  * byte 4 [3] - start of message.  5 bytes per character
+ *
+ * LED "blink code" is a binary patter which flashes 5 times fast
+ *
+ * Power-up LED sequence (button not pressed)
+ *   All OFF
+ *   All ON
+ *   power-up in a chase from top to bottom
+ *   blink code 1
+ *   display EEPROM data size (3 + message size) on low 4 LEDS (D8 always on)
+ *   display message indefinitely
+ *
+ * Power-up (button pressed)
+ *   blink code 7
+ *   reset EEPROM to default "EPIC!" message
+ *   display message indefinitely
+ *
+ * Programming (button pressed in display mode)
+ *   Set bottom LED only on
+ *   Take background light reading, wait for button release
+ *   Delay 1s
+ *   Expect hex data
+ *   blink code 15 once for data
+ *   blink code 15 again for EOF
+ *   display message indefinitely
  */
 
 #define USE_EEPROM
@@ -116,6 +140,9 @@ static void led_set( uint8_t set_mask)
   led_on( set_mask);
 }
 
+//
+// blink binary value 'e' on LEDs 5 times fast
+//
 void error_blink( uint8_t e) {
   int i;
   for( i=0; i<5; i++) {

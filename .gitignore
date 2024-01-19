@@ -47,6 +47,12 @@ flycheck_*.el
 # network security
 /network-security.data
 
+# AVR programming
+*.hex
+*.o
+*.elf
+*.map
+*.lst
 
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
