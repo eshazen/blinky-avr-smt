@@ -2372,7 +2372,7 @@
   )
 
   (symbol (lib_id "Connector:AVR-ISP-6") (at 137.16 124.46 0) (mirror y) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
+    (in_bom yes) (on_board yes) (dnp yes)
     (uuid e8ee6ba9-a4a5-4a3f-bea0-307618c6e47a)
     (property "Reference" "J1" (at 146.05 121.92 0)
       (effects (font (size 1.27 1.27)) (justify right))
