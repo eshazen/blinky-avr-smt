@@ -21,6 +21,7 @@ On Linux:  edit `Makefile` to set `DUDEPORT` appropriately for your programmer.
 Two common options are:
 * `-c avrispv2 -P usb` for the official ISP V2 or clone
 * `-c usbtiny -P usb` for a "USB Tiny" or clone
+* `-c avrisp -P /dev/ttyACM0 -b 19200` for Arduino-as-ISP (untested!)
 
 Type `make` to build:
 
