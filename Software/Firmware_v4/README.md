@@ -14,7 +14,10 @@ squares on the monitor represent "clock" (strobe) and "data".
 On Ubuntu Linux, install the packages `avr-libc`, `gcc-avr` and `avrdude`.
 You also need gnu make (suggest to install `build-essential`).
 
-Edit `Makefile` to set `DUDEPORT` appropriately for your programmer.
+(It is certainly possible to build and download the code on
+other OS but I don't have documentation for that.  Google is your friend!)
+
+On Linux:  edit `Makefile` to set `DUDEPORT` appropriately for your programmer.
 Two common options are:
 * `-c avrispv2 -P usb` for the official ISP V2 or clone
 * `-c usbtiny -P usb` for a "USB Tiny" or clone
