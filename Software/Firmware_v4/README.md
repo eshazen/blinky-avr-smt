@@ -9,6 +9,36 @@ sensors at a Javascript applet which converts the text message to a
 simplified Intel Hex format and transmits it as a binary code.  Two
 squares on the monitor represent "clock" (strobe) and "data".
 
+## Build instructions
+
+On Ubuntu Linux, install the packages `avr-libc`, `gcc-avr` and `avrdude`.
+You also need gnu make (suggest to install `build-essential`).
+
+(It is certainly possible to build and download the code on
+other OS but I don't have documentation for that.  Google is your friend!)
+
+On Linux:  edit `Makefile` to set `DUDEPORT` appropriately for your programmer.
+Two common options are:
+* `-c avrispv2 -P usb` for the official ISP V2 or clone
+* `-c usbtiny -P usb` for a "USB Tiny" or clone
+* `-c avrisp -P /dev/ttyACM0 -b 19200` for Arduino-as-ISP (untested!)
+
+Type `make` to build:
+
+    $ make
+    avr-gcc -c -std=c99 -g -Os -mmcu=attiny84 -DF_CPU=1000000 main.c -o main.o
+    avr-gcc -Wl,-Map=main.map,--cref -mmcu=attiny84 main.o -o main.elf
+    avr-objcopy -j .text -j .data -O ihex main.elf main.hex
+    avr-objdump -h -S main.elf > main.lst
+    avr-size --common -d main.elf
+       text    data     bss     dec     hex filename
+       2708      10     171    2889     b49 main.elf
+
+Connect the programming adapter to the 6 pin connector `J1`.
+(You may have to install this yourself).
+
+Type `make flash` to program the flash.
+
 ## Bugs
 
 Messages longer than 15 characters currently aren't handled correctly
