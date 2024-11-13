@@ -12,7 +12,7 @@ on LEDs when waved back and forth.
 
 ## Revisions
 
-Revision 5.1 PCB (fall 2023).  See (Hardware/avr-smt-44)[PCB documentation].
+Revision 5.1 PCB (fall 2023).  See [PCB Documentation](Hardware/avr-smt-44).
 
 * Improve thermal relief on GND/VCC pads
 * Change SMT programming connector to thru-hole
