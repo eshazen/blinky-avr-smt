@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "tute1-rescue")(type "Legacy")(uri "${KIPRJMOD}/tute1-rescue.lib")(options "")(descr ""))
+)

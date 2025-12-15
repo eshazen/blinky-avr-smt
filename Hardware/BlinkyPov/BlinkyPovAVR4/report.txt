@@ -1,0 +1,42 @@
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/sym-lib-table' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/sym-lib-table-2025-12-15-13-13-25'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1.sch' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1-2025-12-15-13-13-25.sch'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1.kicad_pro' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1-2025-12-15-13-13-25.kicad_pro'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1-cache.lib' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1-cache-2025-12-15-13-13-25.lib'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1.cache.lib' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1.cache-2025-12-15-13-13-25.lib'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1-rescue.lib' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1-rescue-2025-12-15-13-13-25.lib'.
+Info: Backing up file '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/tute1-rescue.dcm' to '/home/hazen/work/blinky-avr-smt/Hardware/BlinkyPov/BlinkyPovAVR4/rescue-backup/tute1-rescue-2025-12-15-13-13-25.dcm'.
+Info: Adding library 'tute1-rescue', file '${KIPRJMOD}/tute1-rescue.lib' to project symbol library table.
+Info: Created project symbol library table.
+
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol R mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol LED mapped to symbol library 'tute1-rescue'.
+Symbol GND mapped to symbol library 'tute1-rescue'.
+Symbol R mapped to symbol library 'tute1-rescue'.
+Symbol R mapped to symbol library 'tute1-rescue'.
+Symbol VCC mapped to symbol library 'tute1-rescue'.
+Symbol GND mapped to symbol library 'tute1-rescue'.
+Symbol ATTINY44A-P mapped to symbol library 'tute1-rescue'.
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol VCC mapped to symbol library 'tute1-rescue'.
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol GND mapped to symbol library 'tute1-rescue'.
+Symbol CONN_1 mapped to symbol library 'tute1-rescue'.
+Symbol C mapped to symbol library 'tute1-rescue'.
+Symbol BATTERY mapped to symbol library 'tute1-rescue'.
+Symbol GND mapped to symbol library 'tute1-rescue'.
+Symbol SW_PUSH mapped to symbol library 'tute1-rescue'.
+Info: Symbol library table mapping complete!
+Info: Created project symbol library table.
+
